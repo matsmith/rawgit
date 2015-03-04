@@ -43,6 +43,12 @@ pre { overflow-x: auto; }
     box-sizing: border-box;
 }
 
+.slim {
+    width: 50%;
+    margin-left: 25%;
+    text-align: center;
+}
+
 /* -- Header ---------------------------------------------------------------- */
 .hd {
     background: #fff;
@@ -149,6 +155,11 @@ pre { overflow-x: auto; }
     text-align: center;
 }
 
+.center {
+    text-align: center;
+}
+
+
 .url {
     background: #fbfbfb;
     border: 1px solid #dfdfdf;
@@ -205,6 +216,11 @@ pre { overflow-x: auto; }
     .url-helper h2 {
         font-size: 1.2em;
         text-align: left;
+    }
+
+    .slim {
+        margin-left: 0;
+        width: 100%;
     }
 }
 

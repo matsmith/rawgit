@@ -67,8 +67,7 @@ app.get('/stats.html', function (req, res) {
 app.get('*/google[0-9a-f]{16}.html',
     middleware.error403);
 
-// Public or private gist.
-app.route(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\/?/)
+app.route('/:repo/raw/:branch/*')
     .all(
         middleware.cdn,
         middleware.stats,
@@ -78,23 +77,8 @@ app.route(/^\/[0-9A-Za-z-]+\/[0-9a-f]+\/raw\/?/)
         middleware.accessControl
     )
     .get(
-        middleware.fileRedirect('https://gist.githubusercontent.com'),
-        middleware.proxyPath('https://gist.githubusercontent.com')
-    );
-
-// Repo file.
-app.route('/:user/:repo/:branch/*')
-    .all(
-        middleware.cdn,
-        middleware.stats,
-        middleware.security,
-        middleware.noRobots,
-        middleware.autoThrottle,
-        middleware.accessControl
-    )
-    .get(
-        middleware.fileRedirect('https://raw.githubusercontent.com'),
-        middleware.proxyPath('https://raw.githubusercontent.com')
+        middleware.fileRedirect('https://gitlist.healthmedia.com'),
+        middleware.proxyPath('https://gitlist.healthmedia.com')
     );
 
 // Stats API.
